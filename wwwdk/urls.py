@@ -17,6 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from LessonsWWW import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/', views.home_render, name='home'),
+    path('books/', views.books_list, name='booksSite'),
+    path('author/', views.authors_list, name="authorsSite"),
+    path('categorys/', views.categorys_list, name="categorysSite")
 ]

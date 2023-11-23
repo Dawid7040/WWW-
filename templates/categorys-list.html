@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'main.css' %}">
+{% include 'blocks/navbar.html' %}
+
+<div>
+  <table>
+    <tr>
+      <th>Nazwa Kategori</th>
+    </tr>
+    {% for book in category %}
+      <tr>
+        <td>{{ book.category_name }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+{% if user.is_authenticated %}
+<h3>Twoja nazwa uzytkownika: {{ user }}</h3>
+{% else %}
+<h3> Nie jesteś zalogowany</h3>
+{% endif %}

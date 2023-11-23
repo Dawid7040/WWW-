@@ -1,0 +1,27 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'main.css' %}">
+{% include 'blocks/navbar.html' %}
+
+<div>
+  <table>
+    <tr>
+      <th>Tytuł</th>
+      <th>Autor</th>
+      <th>Opis</th>
+      <th>Kategoria</th>
+    </tr>
+    {% for book in books %}
+      <tr>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author.first_name }} {{ book.author.last_name }}</td>
+        <td>{{ book.description|default:"Brak opisu"}}</td>
+        <td>{{ book.category.category_name }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+{% if user.is_authenticated %}
+<h3>Twoja nazwa uzytkownika: {{ user }}</h3>
+{% else %}
+<h3> Nie jesteś zalogowany</h3>
+{% endif %}

@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'main.css' %}">
+
+{% include 'blocks/navbar.html' %}
+
+<h1>Strona główna</h1>
+
+<p>Witaj na stronie internetowej naszej księgarni </p>
+
+<a href="{% url 'booksSite' %}">Kategorie</a>
+<a href="{% url 'authorsSite' %}">Autorzy</a>
+<a href="{% url 'categorysSite' %}">Ksiazki</a>
+
+{% if user.is_authenticated %}
+<h3>Twoja nazwa uzytkownika: {{ user }}</h3>
+{% else %}
+<h3> Nie jesteś zalogowany</h3>
+{% endif %}
+<p>Metoda requestu: {{ request.method }}</p>
+<p>User z requestu: {{ request.user }} </p>
+<p>{{ message }}</p>

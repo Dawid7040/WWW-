@@ -1,0 +1,38 @@
+table {
+    width: 100%;
+    border-collapse: collapse; /* Removes the space between borders */
+    margin: 25px 0; /* Adds space around the table */
+    font-size: 0.9em; /* Adjust the font size */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sets the font style */
+    min-width: 400px; /* Minimum width of the table */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* Adds a shadow effect to the table */
+}
+
+/* Table headers styles */
+th {
+    background-color: #009879; /* Sets the background color of headers */
+    color: #ffffff; /* Sets the color of the header text */
+    text-align: left; /* Aligns the header text to the left */
+    padding: 12px 15px; /* Adds space around the header content */
+}
+
+/* Table cells styles */
+td {
+    padding: 12px 15px; /* Adds space around the cell content */
+    border-bottom: 1px solid #dddddd; /* Adds a border to the bottom of the cell */
+}
+
+/* Table rows hover effect */
+tr {
+    border-bottom: 1px solid #dddddd; /* Adds a border to the bottom of the row */
+}
+
+
+
+tr:last-of-type {
+    border-bottom: 2px solid #009879; /* Adds a stronger border to the last row */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Adds a hover effect to the rows */
+}

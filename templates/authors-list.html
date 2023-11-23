@@ -1,0 +1,26 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'main.css' %}">
+{% include 'blocks/navbar.html' %}
+
+<div>
+  <table>
+    <tr>
+      <th>Imie</th>
+      <th>Nazwisko</th>
+      <th>Rok urodzenia</th>
+    </tr>
+    {% for auth in author %}
+      <tr>
+        <td>{{ auth.first_name }}</td>
+        <td>{{ auth.last_name }} {{ book.author.last_name }}</td>
+        <td>{{ auth.year_of_birth|default:"Brak daty"}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% if user.is_authenticated %}
+<h3>Twoja nazwa uzytkownika: {{ user }}</h3>
+{% else %}
+<h3> Nie jesteś zalogowany</h3>
+{% endif %}
