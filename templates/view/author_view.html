@@ -1,0 +1,10 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'view-style.css' %}">
+{% include 'blocks/navbar.html' %}
+<div class="bodyClass">
+<div class="view">
+    <h2>{{ book.first_name }}</h2>
+    <p>Autor: {{ book.first_name }} {{ book.last_name }}</p>
+    <p>Year of birth: {{ book.year_of_birth|default:"Brak danych" }}</p>
+</div>
+    </div>

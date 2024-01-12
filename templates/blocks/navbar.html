@@ -24,10 +24,14 @@
           <a class="nav-link" href="{% url 'booksSite' %}">Books</a>
         </li>
             {% if not user.is_authenticated %}
-<button class="btn btn-outline-success" type="submit">Log In</button>
+<button class="btn btn-outline-success" type="submit" onclick="window.location.href='{% url 'login' %}'">Log In</button>
+
+                {% else %}
+                <button class="btn btn-outline-success" type="submit" onclick="window.location.href='{% url 'logout' %}'">Log Out</button>
 
 {% endif %}
           </ul>
     </div>
   </div>
 </nav>
+{% include 'blocks/messages.html' %}

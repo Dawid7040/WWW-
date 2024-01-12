@@ -12,7 +12,7 @@
     </tr>
     {% for book in books %}
       <tr>
-        <td>{{ book.title }}</td>
+        <td > <a href="{% url 'bookView' book.id %}">{{ book.title }}</a></td>
         <td>{{ book.author.first_name }} {{ book.author.last_name }}</td>
         <td>{{ book.description|default:"Brak opisu"}}</td>
         <td>{{ book.category.category_name }}</td>

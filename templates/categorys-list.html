@@ -9,7 +9,7 @@
     </tr>
     {% for book in category %}
       <tr>
-        <td>{{ book.category_name }}</td>
+        <td><a href="{% url 'categoryView' book.id %}">{{ book.category_name }}</a></td>
       </tr>
     {% endfor %}
   </table>

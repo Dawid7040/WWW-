@@ -1,0 +1,11 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'view-style.css' %}">
+{% include 'blocks/navbar.html' %}
+<div class="bodyClass">
+<div class="view">
+<h2>{{ book.title }}</h2>
+<p>Autor: {{ book.author.first_name }} {{ book.author.last_name }}</p>
+<p>Kategoria: {{ book.category.category_name }}</p>
+<p>Opis: {{ book.description }}</p>
+</div>
+</div>
